@@ -1,5 +1,14 @@
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 
+task.wait(3)
+local StarterGui = game:GetService("StarterGui")
+
+StarterGui:SetCore("SendNotification", {
+    Title = "Loading.. Dead Hub",
+    Text = "Wait a few seconds, The script is loading",
+    Duration = 5,
+    Icon = "rbxassetid://99447609195227" 
+})
 local Window = Fluent:CreateWindow({
     Title = "Dead Hub",
     SubTitle = "By Laspard, Laspynx69",
@@ -11,9 +20,7 @@ local Window = Fluent:CreateWindow({
     
 })
 
-task.wait(6)
-local StarterGui = game:GetService("StarterGui")
-
+task.wait(5)
 StarterGui:SetCore("SendNotification", {
     Title = "DeadHub Loaded!",
     Text = "Dead Rails Script Loaded!",
@@ -193,16 +200,15 @@ Tabs.Main:AddButton({
         
         humanoid:TakeDamage(999999)
         EndDecisionRemote:FireServer(false)
-        queue_on_tp("PUT YOUR SCRIPT HERE")
+        
+        queue_on_tp(loadstring(game:HttpGet("https://raw.githubusercontent.com/Laspard69/DeadHub/refs/heads/main/DeadRails.lua"))())
         
         print("=== Script finished ===")
-
+        
         Fluent:Notify({
             Title = "Dead Hub",
             Content = "Auto Farm Bonds Started!",
-            Duration = 3 
-        })
-    end
+            Duration = 3
 })
 
 Tabs.Esp:AddParagraph({
